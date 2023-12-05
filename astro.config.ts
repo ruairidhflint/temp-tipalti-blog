@@ -10,7 +10,7 @@ import { remarkReadingTime } from "./src/utils/remark-reading-time";
 
 export default defineConfig({
 	// ! Please remember to replace the following site property with your own domain
-	site: "https://rory.codes",
+	site: "https://temp-tipalti-blog.vercel.app/",
 	markdown: {
 		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
 		rehypePlugins: [
