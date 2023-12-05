@@ -9,10 +9,6 @@ export type SiteConfig = {
 		options: Intl.DateTimeFormatOptions;
 	};
 	includeViewTransitions: boolean;
-	webmentions?: {
-		link: string;
-		pingback?: string;
-	};
 };
 
 export type PaginationLink = {
@@ -26,39 +22,6 @@ export type SiteMeta = {
 	description?: string;
 	ogImage?: string | undefined;
 	articleDate?: string | undefined;
-};
-
-/** Webmentions */
-export type WebmentionsFeed = {
-	type: string;
-	name: string;
-	children: WebmentionsChildren[];
-};
-
-export type WebmentionsCache = {
-	lastFetched: string | null;
-	children: WebmentionsChildren[];
-};
-
-export type WebmentionsChildren = {
-	type: string;
-	author: Author | null;
-	url: string;
-	published?: string | null;
-	"wm-received": string;
-	"wm-id": number;
-	"wm-source": string;
-	"wm-target": string;
-	"wm-protocol": string;
-	syndication?: string[] | null;
-	content?: Content | null;
-	"mention-of": string;
-	"wm-property": string;
-	"wm-private": boolean;
-	rels?: Rels | null;
-	name?: string | null;
-	photo?: string[] | null;
-	summary?: Summary | null;
 };
 
 export type Author = {

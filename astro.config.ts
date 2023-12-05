@@ -8,13 +8,13 @@ import remarkUnwrapImages from "remark-unwrap-images";
 import rehypeExternalLinks from "rehype-external-links";
 import { remarkReadingTime } from "./src/utils/remark-reading-time";
 
-// https://astro.build/config
 export default defineConfig({
 	// ! Please remember to replace the following site property with your own domain
 	site: "https://astro-cactus.chriswilliams.dev/",
 	markdown: {
 		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
 		rehypePlugins: [
+			// @ts-expect-error untyped
 			[rehypeExternalLinks, { target: "_blank", rel: ["nofollow, noopener, noreferrer"] }],
 		],
 		remarkRehype: { footnoteLabelProperties: { className: [""] } },
@@ -31,9 +31,6 @@ export default defineConfig({
 		sitemap(),
 		prefetch(),
 	],
-	image: {
-		domains: ["webmention.io"],
-	},
 	vite: {
 		plugins: [rawFonts([".ttf"])],
 		optimizeDeps: {
